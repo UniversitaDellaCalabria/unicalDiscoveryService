@@ -1,0 +1,10 @@
+*.pyc
+*~
+*__pycache__*
+__pycache__/
+*/.~lock*
+tmp/*
+!tmp/README.md
+example/unical_discovery_service
+example/ds_spid/settingslocal.py
+example/db.sqlite3

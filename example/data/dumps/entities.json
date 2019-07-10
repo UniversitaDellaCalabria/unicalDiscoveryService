@@ -1,0 +1,180 @@
+[
+{
+  "model": "unical_discovery_service.entitytype",
+  "pk": 1,
+  "fields": {
+    "name": "SPID",
+    "type": "saml"
+  }
+},
+{
+  "model": "unical_discovery_service.entitytype",
+  "pk": 2,
+  "fields": {
+    "name": "Unical",
+    "type": "saml"
+  }
+},
+{
+  "model": "unical_discovery_service.entitytype",
+  "pk": 3,
+  "fields": {
+    "name": "IDEM",
+    "type": "saml"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 1,
+  "fields": {
+    "name": "arubaid",
+    "display_name": "Aruba ID",
+    "type": 1,
+    "entity_id": "https://loginspid.aruba.it",
+    "logo": "/static/images/spid-idp-arubaid.svg",
+    "is_active": true,
+    "created": "2019-07-10T14:55:06.484Z",
+    "updated": "2019-07-10T15:07:03.139Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 2,
+  "fields": {
+    "name": "infocertid",
+    "display_name": "Infocert ID",
+    "type": 1,
+    "entity_id": "https://identity.infocert.it",
+    "logo": "/static/images/spid-idp-infocertid.svg",
+    "is_active": true,
+    "created": "2019-07-10T15:05:25.119Z",
+    "updated": "2019-07-10T15:06:54.676Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 3,
+  "fields": {
+    "name": "intesaid",
+    "display_name": "Intesa ID",
+    "type": 1,
+    "entity_id": "https://spid.intesa.it",
+    "logo": "/static//images/spid-idp-intesaid.svg",
+    "is_active": true,
+    "created": "2019-07-10T15:08:02.694Z",
+    "updated": "2019-07-10T15:08:15.853Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 4,
+  "fields": {
+    "name": "lepidaid",
+    "display_name": "Lepida ID",
+    "type": 1,
+    "entity_id": "https://id.lepida.it/idp/shibboleth",
+    "logo": "/static/images/spid-idp-lepidaid.svg",
+    "is_active": true,
+    "created": "2019-07-10T15:08:49.081Z",
+    "updated": "2019-07-10T15:08:57.394Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 5,
+  "fields": {
+    "name": "namirialid",
+    "display_name": "Namirial ID",
+    "type": 1,
+    "entity_id": "https://idp.namirialtsp.com/idp",
+    "logo": "/static/images/spid-idp-namirialid.svg",
+    "is_active": true,
+    "created": "2019-07-10T15:10:03.108Z",
+    "updated": "2019-07-10T15:10:06.194Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 6,
+  "fields": {
+    "name": "posteid",
+    "display_name": "Poste ID",
+    "type": 1,
+    "entity_id": "https://posteid.poste.it",
+    "logo": "/static//images/spid-idp-posteid.svg",
+    "is_active": true,
+    "created": "2019-07-10T15:10:33.541Z",
+    "updated": "2019-07-10T15:10:35.044Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 7,
+  "fields": {
+    "name": "sielteid",
+    "display_name": "Sielte ID",
+    "type": 1,
+    "entity_id": "https://identity.sieltecloud.it",
+    "logo": "/static//images/spid-idp-sielteid.svg",
+    "is_active": true,
+    "created": "2019-07-10T15:11:10.123Z",
+    "updated": "2019-07-10T15:11:13.870Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 8,
+  "fields": {
+    "name": "spiditalia",
+    "display_name": "SPIDItalia Register.it",
+    "type": 1,
+    "entity_id": "https://spid.register.it",
+    "logo": "/static/images/spid-idp-spiditalia.svg",
+    "is_active": true,
+    "created": "2019-07-10T15:12:04.105Z",
+    "updated": "2019-07-10T15:12:05.904Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 9,
+  "fields": {
+    "name": "timid",
+    "display_name": "Tim ID",
+    "type": 1,
+    "entity_id": "https://login.id.tim.it/affwebservices/public/saml2sso",
+    "logo": "/static//images/spid-idp-timid.svg",
+    "is_active": true,
+    "created": "2019-07-10T15:12:35.449Z",
+    "updated": "2019-07-10T15:12:35.449Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 10,
+  "fields": {
+    "name": "unicalid",
+    "display_name": "UnicalID",
+    "type": 2,
+    "entity_id": "https://auth.unical.it/idp/metadata/",
+    "logo": "https://auth.unical.it/static/img/logo.svg",
+    "is_active": true,
+    "created": "2019-07-10T15:13:30.101Z",
+    "updated": "2019-07-10T15:21:57.985Z"
+  }
+},
+{
+  "model": "unical_discovery_service.entity",
+  "pk": 11,
+  "fields": {
+    "name": "spid-testenv2",
+    "display_name": "spid-testenv2",
+    "type": 1,
+    "entity_id": "http://idpspid.testunical.it:8088",
+    "logo": "https://developers.italia.it/assets/icons/logo-it.png",
+    "is_active": true,
+    "created": "2019-07-10T22:18:29.974Z",
+    "updated": "2019-07-10T22:18:29.974Z"
+  }
+}
+]

@@ -1,0 +1,180 @@
+<!-- Extends default Bootstrap Unical Italia template -->
+{% extends 'ds_base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+{% block page_title %}
+{% trans "Unical Discovery Service" %}
+{% endblock page_title %}
+
+{% block pre_ds_head %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/spid-sp-access-button.min.css' %}" />
+{% endblock pre_ds_head %}
+
+{% block after_ds_head %}
+<script type="text/javascript" src="{% static 'js/Brython-3.7.3/brython.js' %}"></script>
+<!-- Usefull only if urllib is needed ...
+<script type="text/javascript" src="{% static 'js/Brython-3.7.3/brython_stdlib.js' %}"></script>
+-->
+
+<script type="text/javascript">
+    // brython init
+    document.addEventListener('DOMContentLoaded', function() {
+        brython({debug: 1});
+    }, false);
+</script>
+
+<script type="text/python">
+    import browser
+
+    debug = 0
+    # inspection ...
+    # browser.console.log(browser.__dict__)
+
+    # too slow ...
+    # import urllib.parse
+    # args = urllib.parse.parse_qsl(browser.window.location.search.replace('?', ''))
+    # browser.console.log(args)
+
+    def get_args(search_string=browser.window.location.search):
+        """parse GET arguments from browser.window.location.search
+        """
+        d = dict()
+        for element in search_string.replace('?', '').split('&'):
+            k, v = element.split('=')
+            d[k] = v.replace('%3A', ':').replace('%2F', '/')
+        return d
+
+    def disco(ev):
+        if debug: browser.console.log(ev.__dict__)
+        if not hasattr(ev.currentTarget.dataset, 'entityid'):
+            browser.alert('dataset not found:\n please add \"data-entityid="$variable"\" to element ')
+            return
+        entity_id = ev.currentTarget.dataset.entityid
+        if debug: browser.console.log(entity_id)
+        browser.console.log(args)
+        browser.window.location = args['return']+ '?entityID={}'.format(entity_id)
+
+    # something like:
+    # {entityID: "https://satosa.testunical.it/Saml2/metadata",
+    #  return: "https://satosa.testunical.it/Saml2/disco"}
+    args = get_args()
+    if debug: browser.console.log(args)
+
+    # unicalID button event on click
+    browser.document["unicalid"].bind("click", disco)
+
+    # spid buttons event on click
+    for ele in browser.document.select("li.spid-idp-button-link"):
+        ele.bind("click", disco)
+
+</script>
+
+{% endblock after_ds_head %}
+
+{% block main_menu %}
+<div class="it-header-navbar-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg has-megamenu">
+                    <button class="custom-navbar-toggler" type="button" aria-controls="nav10" aria-expanded="false" aria-label="Toggle navigation" data-target="#nav10">
+                        <svg class="icon">
+                            <use xlink:href="{% static 'images/svg/sprite.svg' %}#it-burger"></use>
+                        </svg>
+                    </button>
+                    <div class="navbar-collapsable" id="nav10">
+                        <div class="overlay"></div>
+                        <div class="close-div sr-only">
+                            <button class="btn close-menu" type="button"><span class="it-close"></span>close</button>
+                        </div>
+                        <div class="menu-wrapper">
+                            <ul class="navbar-nav">
+
+                                <li class="nav-item active"><a class="nav-link active" href="#">
+                                    <span>{% trans "Pagina principale" %}</span>
+                                    <span class="sr-only">current</span></a></li>
+
+                                {% comment %}
+                                <li class="nav-item"><a class="nav-link" href="#"><span>link 2</span></a></li>
+                                <li class="nav-item"><a class="nav-link disabled" href="#"><span>link 3 disabilitato</span></a></li>
+                                {% endcomment %}
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">
+                                        <span>{% trans "Domande frequenti" %}</span>
+                                        <svg class="icon icon-xs">
+                                            <use xlink:href="{% static 'images/svg/sprite.svg' %}#it-expand"></use>
+                                        </svg>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <div class="link-list-wrapper">
+                                            <ul class="link-list">
+                                                <li>
+                                                    <h3 class="no_toc" id="heading">{% trans "UnicalID" %}</h3>
+                                                </li>
+                                                <li><a class="list-item" href="https://www.unical.it/portale/strutture/centri/centroict/schdeserviziict/helpdeskcentroict/"><span>{% trans "Assistenza" %}</span></a></li>
+                                                <li><span class="divider"></span></li>
+                                                <li>
+                                                    <h3 class="no_toc" id="heading">{% trans "SPID" %}</h3>
+                                                </li>
+                                                <li class="spid-idp-support-link">
+                                                    <a  class="list-item"  href="https://www.spid.gov.it">Maggiori informazioni</a>
+                                                </li>
+                                                <li class="spid-idp-support-link">
+                                                    <a  class="list-item"  href="https://www.spid.gov.it/richiedi-spid">Non hai SPID?</a>
+                                                </li>
+                                                <li class="spid-idp-support-link">
+                                                    <a  class="list-item"  href="https://www.spid.gov.it/serve-aiuto">Serve aiuto?</a>
+                                                </li>
+
+                                                </span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main_menu %}
+
+{% block centered_container %}
+<h4 class="">{% trans "Benvenuto in" %} {% trans "Unical Discovery Service" %}</h4>
+
+<p class="mb-lg-5 mb-2">
+    {% trans "Seleziona il Provider di Identità presso il quale desideri autenticarti" %}
+</p>
+
+<div class="card-wrapper card-space">
+    <div class="card card-bg no-after">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm text-center">
+                    <a href="#" id="{{ unical_id.name }}" data-idp="{{ unical_id.name }}" data-entityid="{{ unical_id.entity_id }}"
+                       class="button-spid button-unical italia-it-button italia-it-button-size-xl spid-idp-button-xlarge-post"
+                       aria-haspopup="true" aria-expanded="false">
+                        <span class="italia-it-button-icon">
+                            <img src="{% static 'images/logo_white.png' %}" alt="" />
+                        </span>
+                        <span class="italia-it-button-text">{% trans "Entra" %}</span>
+                    </a>
+                </div>
+                <div class="col-sm text-center">
+                    {% include 'spid_button.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock centered_container %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/spid-sp-access-button.min.js' %}"></script>
+<script src="{% static 'js/spid_button.js' %}"></script>
+{% endblock extra_scripts %}

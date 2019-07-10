@@ -1,0 +1,11 @@
+.italia-it-button-size-xl {
+    /**width: auto;**/
+    max-width: 100%;
+}
+
+.button-unical {
+    background: #b71e24
+}
+.button-unical:hover {
+    background-color: #73060a;
+}
