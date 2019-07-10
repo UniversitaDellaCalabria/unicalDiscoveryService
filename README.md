@@ -1,10 +1,9 @@
-Discovery Service for Università della Calabria
------------------------------------------------
+# Discovery Service for Università della Calabria
 
 Django Application for deployng a SAML Discovery Service with (or without) SPID access button.
 
-Features
---------
+## Features
+
 
 - SPID button integration;
 - Entities classification via admin backend;
@@ -14,8 +13,7 @@ Features
 - [Brython](https://brython.info/) integration, Python 3 implementation for client-side web programming means that javascript was developed as `application/python`!
 
 
-Example
--------
+## Example
 
 ````
 pip install -r requirements
@@ -24,10 +22,11 @@ pip install -r requirements
 ./manage.py migrate
 ./manage.py createsuperuser
 ./manage.py loaddata example/data/dumps/entities.json
+./manage.py runserver 0.0.0.0:8000
 ````
 
-Gallery
---------
+## Gallery
+
 ![Home](data/gallery/page.png)
 _**Frontend**: Main page_
 
