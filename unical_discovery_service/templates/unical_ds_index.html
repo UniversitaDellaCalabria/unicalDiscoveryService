@@ -41,6 +41,11 @@
         """parse GET arguments from browser.window.location.search
         """
         d = dict()
+        if not search_string:
+            browser.alert(('To use a Discovery Service '
+                           'you must come from a '
+                           'Service Provider'))
+            return
         for element in search_string.replace('?', '').split('&'):
             k, v = element.split('=')
             d[k] = v.replace('%3A', ':').replace('%2F', '/')
@@ -70,7 +75,6 @@
         ele.bind("click", disco)
 
 </script>
-
 {% endblock after_ds_head %}
 
 {% block main_menu %}
@@ -162,7 +166,7 @@
                         <span class="italia-it-button-icon">
                             <img src="{% static 'images/logo_white.png' %}" alt="" />
                         </span>
-                        <span class="italia-it-button-text">{% trans "Entra" %}</span>
+                        <span class="italia-it-button-text">{% trans "Unical ID" %}</span>
                     </a>
                 </div>
                 <div class="col-sm text-center">
