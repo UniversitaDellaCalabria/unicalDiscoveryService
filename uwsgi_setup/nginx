@@ -84,7 +84,14 @@ server {
     location / {
         uwsgi_pass  unicalauth;
         uwsgi_param HTTP_X_FORWARDED_PROTOCOL https;
-        uwsgi_read_timeout 724;
+        uwsgi_read_timeout 42;
+
+        # Enable HTTP Strict Transport Security with a 2 year duration
+        add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; ";
+        
+        # deny iFrame
+        add_header X-Frame-Options "DENY";
+        
         include     /opt/unicalauth/uwsgi_setup/uwsgi_params; # the uwsgi_params file you installed
     }
 
