@@ -30,6 +30,7 @@ class Entity(models.Model):
                              on_delete=models.CASCADE)
 
     entity_id = models.TextField()
+    metadata_url = models.URLField(blank=True, null=True)
     logo = models.CharField(max_length=254,
                             null=True,
                             default='/'.join((settings.STATIC_URL,
