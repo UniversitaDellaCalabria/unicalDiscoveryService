@@ -1,4 +1,4 @@
-django>=2.2.9,<3.0
+django>=2.2.11,<3.0
 
 #Bootstrap Italia + Unical template
 git+https://github.com/italia/design-django-theme.git
@@ -7,3 +7,4 @@ git+https://github.com/UniversitaDellaCalabria/django-unical-agid-template.git
 # SASS dynamic compiler
 libsass
 django_sass_processor
+
