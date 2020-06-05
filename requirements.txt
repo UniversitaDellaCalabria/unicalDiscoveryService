@@ -1,4 +1,4 @@
-django>=2.2.11,<3.0
+django>=3.0.7,<4.0
 
 #Bootstrap Italia + Unical template
 git+https://github.com/italia/design-django-theme.git
