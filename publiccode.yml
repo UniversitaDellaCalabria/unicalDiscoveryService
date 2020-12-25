@@ -26,8 +26,8 @@ description:
   en:
     documentation: 'https://github.com/UniversitaDellaCalabria/unicalDiscoveryService/blob/master/README.md'
     features:
-      - Righ HTML editing with CKEDitor
-      - multi language support
+      - Management backed
+      - Based on Bootstrap Italia Design
     genericName: web application
     longDescription: >
         # Discovery Service for Università della Calabria
