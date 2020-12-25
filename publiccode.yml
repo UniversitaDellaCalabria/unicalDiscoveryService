@@ -1,0 +1,99 @@
+# This repository adheres to the publiccode.yml standard by including this 
+# metadata file that makes public software easily discoverable.
+# More info at https://github.com/italia/publiccode.yml
+
+publiccodeYmlVersion: '0.2'
+categories:
+  - content-management
+dependsOn:
+  open:
+    - name: MariaDB
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: ''
+    - name: Python
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: ''
+    - name: Django
+      optional: false
+      version: ''
+      versionMax: ''
+      versionMin: ''
+description:
+  en:
+    documentation: 'https://github.com/UniversitaDellaCalabria/unicalDiscoveryService/blob/master/README.md'
+    features:
+      - Righ HTML editing with CKEDitor
+      - multi language support
+    genericName: web application
+    longDescription: >
+        # Discovery Service for Università della Calabria
+        
+        Django Application for deployng a SAML Discovery Service with (or without) SPID access button.
+        
+        ## Features
+        
+        
+        - SPID button integration;
+        - Entities classification via admin backend;
+        - Based on Bootstrap Italia Unical Template;
+        - Discovery Service web resources compatible with [pyff](http://pyff.io/) resources:
+          - /role/idp.ds
+        - [Brython](https://brython.info/) integration, Python 3 implementation for client-side web programming means that javascript was developed as `application/python`!
+    
+    screenshots:
+      - >-
+        https://github.com/UniversitaDellaCalabria/unicalDiscoveryService/raw/master/data/gallery/page.png
+    shortDescription: Django Application for deployng a SAML Discovery Service with SPID access button.
+developmentStatus: stable
+intendedAudience:
+  scope:
+    - employment
+it:
+  conforme:
+    gdpr: true
+    lineeGuidaDesign: false
+    misureMinimeSicurezza: true
+    modelloInteroperabilita: false
+  countryExtensionVersion: '0.2'
+  piattaforme:
+    anpr: false
+    cie: false
+    pagopa: false
+    spid: false
+  riuso:
+    codiceIPA: unical
+landingURL: 'https://github.com/UniversitaDellaCalabria/unicalDiscoveryService'
+legal:
+  authorsFile: >-
+    https://github.com/UniversitaDellaCalabria/unicalDiscoveryService/blob/master/AUTHORS
+  license: Apache-2.0
+  mainCopyrightOwner: Università della Calabria
+localisation:
+  availableLanguages:
+    - it
+    - en
+  localisationReady: true
+maintenance:
+  contacts:
+    - affiliation: unical.it
+      email: giuseppe.demarco@unical.it
+      name: Giuseppe De Marco
+    - affiliation: unical.it
+      email: francesco.filicetti@unical.it
+      name: Francesco Filicetti
+  type: internal
+name: unicalDiscoveryService
+platforms:
+  - linux
+  - web
+releaseDate: '2020-01-13'
+roadmap: 'https://github.com/UniversitaDellaCalabria/unicalDiscoveryService/issues'
+softwareType: standalone/web
+softwareVersion: 1.2.0
+url: 'https://github.com/UniversitaDellaCalabria/unicalDiscoveryService'
+usedBy:
+  - 'https://www.unical.it'
