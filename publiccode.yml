@@ -46,7 +46,7 @@ description:
     
     screenshots:
       - >-
-        https://github.com/UniversitaDellaCalabria/unicalDiscoveryService/raw/master/data/gallery/page.png
+        https://raw.githubusercontent.com/UniversitaDellaCalabria/unicalDiscoveryService/master/data/gallery/page.png
     shortDescription: Django Application for deployng a SAML Discovery Service with SPID access button.
 developmentStatus: stable
 intendedAudience:
